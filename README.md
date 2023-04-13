@@ -1,3 +1,1 @@
-# About me
-
-[Welcome Click](https://wp993080086.github.io/)
+# [About me](https://wp993080086.github.io/)
