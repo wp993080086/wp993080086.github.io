@@ -1,1 +1,0 @@
-"use strict";(self["webpackChunkh5_pay"]=self["webpackChunkh5_pay"]||[]).push([[942],{672:function(n,t,u){u.r(t),u.d(t,{default:function(){return f}});var e=function(){var n=this,t=n._self._c;return t("div",{staticClass:"flex_center_xy"},[n._v("not-found")])},l=[],s={name:"NotFound"},a=s,r=u(1),c=(0,r.Z)(a,e,l,!1,null,null,null),f=c.exports}}]);
