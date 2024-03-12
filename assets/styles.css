@@ -1,0 +1,128 @@
+:root {
+	--wp_white: #ffffff;
+	--wp_black: #000000;
+	--wp_gray: #dddddd;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body,
+html {
+	width: 100%;
+	height: 100%;
+}
+#root {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 100%;
+	height: 100%;
+	background-color: var(--wp_white);
+	color: var(--wp_black);
+	overflow: hidden;
+}
+#textbox{
+	width: calc(100% - 60px);
+	height: 300px;
+	border: 1px solid var(--wp_black);
+	border-radius: 8px;
+	margin: 60px 0 60px 0;
+	font-size: 24px;
+	padding: 20px;
+}
+#keyboard {
+	display: flex;
+	flex-wrap: wrap;
+	width: 920px;
+	height: 324px;
+	border-radius: 15px;
+	padding: 18px;
+	font-size: 12px;
+	border: 1px solid var(--wp_black);
+	background-color: var(--wp_black);
+}
+.row {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+.key {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: space-around;
+	flex-shrink: 0;
+	width: 50px;
+	height: 50px;
+	border-radius: 4px;
+	color: var(--wp_white);
+	background-color: var(--wp_black);
+	transition: ease 0.3s;
+	box-shadow: -3px -3px 10px var(--wp_white), 3px 3px 6px var(--wp_gray);
+	cursor: pointer;
+}
+.key:active {
+	box-shadow: 0 0 0 var(--wp_white), 0 0 0 var(--wp_gray), inset 3px 3px 6px rgba(0, 0, 0, 0.2),
+		inset -3px -3px 10px rgba(255, 255, 255, 0.3);
+}
+.active {
+	box-shadow: 0 0 0 var(--wp_white), 0 0 0 var(--wp_gray), inset 3px 3px 6px rgba(0, 0, 0, 0.2),
+		inset -3px -3px 10px rgba(255, 255, 255, 0.3);
+}
+.backspace {
+	width: 100px;
+}
+.tab {
+	width: 75px;
+}
+.caps_lock {
+	width: 100px;
+}
+.shift {
+	width: 130px;
+}
+.enter {
+	width: 112px;
+}
+.blank {
+	width: 280px;
+}
+.ctrl {
+	width: 75px;
+}
+.alt {
+	width: 75px;
+}
+.win {
+	width: 75px;
+}
+.menu {
+	width: 75px;
+}
+@media screen and (max-width: 992px) {
+	#keyboard{
+		transform: scale(1);
+	}
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+	#keyboard{
+		transform: scale(0.75);
+	}
+}
+@media screen and (min-width: 480px) and (max-width: 768px) {
+	#keyboard{
+		transform: scale(0.55);
+	}
+}
+@media screen and (min-width: 375px) and (max-width: 480px) {
+	#keyboard{
+		transform: scale(0.45);
+	}
+}
+@media screen and (max-width: 375px) {
+	#keyboard{
+		transform: scale(0.35);
+	}
+}
