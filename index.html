@@ -2,153 +2,132 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<link rel="icon" href="./assets/favicon.ico" />
-		<title>About me</title>
-		<link rel="stylesheet" href="./assets/styles.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="icon" type="image/svg+xml" href="./favicon.ico" />
+		<link rel="stylesheet" href="./normalize.css" />
+		<title>Test</title>
+		<style>
+			/* 针对整个滚动条 */
+			::-webkit-scrollbar {
+				width: 8px; /* 垂直滚动条的宽度 */
+				height: 8px; /* 水平滚动条的高度 */
+			}
+
+			/* 滚动条轨道（背景） */
+			::-webkit-scrollbar-track {
+				background: #f1f1f1; /* 轨道背景色 */
+				border-radius: 4px;
+			}
+
+			/* 滚动条滑块（可拖动的部分） */
+			::-webkit-scrollbar-thumb {
+				background: #888; /* 滑块的颜色 */
+				border-radius: 4px; /* 滑块的圆角 */
+			}
+
+			/* 鼠标悬停在滑块上时的样式 */
+			::-webkit-scrollbar-thumb:hover {
+				background: #555;
+			}
+			body {
+				background-image: url('./common-blur-bg.jpg');
+				background-size: cover;
+				background-position: center center;
+				background-attachment: fixed;
+				background-repeat: no-repeat;
+			}
+			#root {
+				width: 100%;
+			}
+			.app {
+				width: 100%;
+				max-width: 430px;
+				min-height: 100vh;
+				background-color: #240f74;
+				margin: 0px auto;
+			}
+			.main {
+				position: relative;
+				width: 100%;
+				padding: 16px;
+			}
+			.wrapper {
+				position: relative;
+				display: flex;
+				flex-wrap: wrap;
+				gap: 16px;
+				width: 100%;
+				height: fit-content;
+			}
+			.item {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: calc(50% - 8px);
+				height: 210px;
+				background-color: #2e2e2e;
+				color: white;
+				border-radius: 16px;
+			}
+			.footer {
+				position: fixed;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 56px;
+			}
+			.footer-children {
+				width: 100%;
+				max-width: 430px;
+				height: 56px;
+				margin: 0px auto;
+				background-color: beige;
+			}
+			.service {
+				position: fixed;
+				z-index: 99;
+				right: 50%;
+				/* 媒体查询 430以下则是-40px */
+				margin-right: -207px;
+				bottom: 66px;
+				width: 80px;
+				height: 80px;
+				background-color: #8937df;
+				border-radius: 50%;
+			}
+			/* 当设备宽度小于等于430px时 */
+			@media screen and (max-width: 430px) {
+				.service {
+					margin-right: 0px !important;
+					right: 8px !important;
+				}
+			}
+		</style>
 	</head>
 
-	<body>
+	<body oncontextmenu="return false" ondragstart="return false">
 		<div id="root">
-			<div id="textbox" contenteditable></div>
-			<div id="keyboard">
-				<div class="row">
-					<div class="key key0">
-						<span>~</span>
-						<span>`</span>
-					</div>
-					<div class="key key1">
-						<span>!</span>
-						<span>1</span>
-					</div>
-					<div class="key key2">
-						<span>@</span>
-						<span>2</span>
-					</div>
-					<div class="key key3">
-						<span>#</span>
-						<span>3</span>
-					</div>
-					<div class="key key4">
-						<span>$</span>
-						<span>4</span>
-					</div>
-					<div class="key key5">
-						<span>%</span>
-						<span>5</span>
-					</div>
-					<div class="key key6">
-						<span>^</span>
-						<span>6</span>
-					</div>
-					<div class="key key7">
-						<span>&</span>
-						<span>7</span>
-					</div>
-					<div class="key key8">
-						<span>*</span>
-						<span>8</span>
-					</div>
-					<div class="key key9">
-						<span>（</span>
-						<span>9</span>
-					</div>
-					<div class="key key10">
-						<span>）</span>
-						<span>0</span>
-					</div>
-					<div class="key key11">
-						<span>——</span>
-						<span>-</span>
-					</div>
-					<div class="key key12">
-						<span>+</span>
-						<span>=</span>
-					</div>
-					<div class="key key13 backspace">Backspace</div>
-				</div>
-				<div class="row">
-					<div class="key key14 tab">Tab</div>
-					<div class="key key15">Q</div>
-					<div class="key key16">W</div>
-					<div class="key key17">E</div>
-					<div class="key key18">R</div>
-					<div class="key key19">T</div>
-					<div class="key key20">Y</div>
-					<div class="key key21">U</div>
-					<div class="key key22">I</div>
-					<div class="key key23">O</div>
-					<div class="key key24">P</div>
-					<div class="key key25">
-						<span>{</span>
-						<span>[</span>
-					</div>
-					<div class="key key26">
-						<span>}</span>
-						<span>]</span>
-					</div>
-					<div class="key key27">
-						<span>|</span>
-						<span>\</span>
+			<div class="app">
+				<div class="main">
+					<div class="wrapper">
+						<div class="item">1</div>
+						<div class="item">2</div>
+						<div class="item">3</div>
+						<div class="item">4</div>
+						<div class="item">5</div>
+						<div class="item">6</div>
+						<div class="item">7</div>
+						<div class="item">8</div>
+						<div class="item">9</div>
+						<div class="item">10</div>
+						<div class="footer">
+							<div class="footer-children"></div>
+						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="key key28 caps_lock">Caps Lock</div>
-					<div class="key key29">A</div>
-					<div class="key key30">S</div>
-					<div class="key key31">D</div>
-					<div class="key key32">F</div>
-					<div class="key key33">G</div>
-					<div class="key key34">H</div>
-					<div class="key key35">J</div>
-					<div class="key key36">K</div>
-					<div class="key key37">L</div>
-					<div class="key key38">
-						<span>:</span>
-						<span>;</span>
-					</div>
-					<div class="key key39">
-						<span>"</span>
-						<span>'</span>
-					</div>
-					<div class="key key40 enter">Enter</div>
-				</div>
-				<div class="row">
-					<div class="key key41 shift">Shift</div>
-					<div class="key key42">Z</div>
-					<div class="key key43">X</div>
-					<div class="key key44">C</div>
-					<div class="key key45">V</div>
-					<div class="key key46">B</div>
-					<div class="key key47">N</div>
-					<div class="key key48">M</div>
-					<div class="key key49">
-						<span><</span>
-						<span>,</span>
-					</div>
-					<div class="key key50">
-						<span>></span>
-						<span>.</span>
-					</div>
-					<div class="key key51">
-						<span>?</span>
-						<span>/</span>
-					</div>
-					<div class="key key41 shift">Shift</div>
-				</div>
-				<div class="row">
-					<div class="key key52 ctrl">Ctrl</div>
-					<div class="key key53 win">Win</div>
-					<div class="key key54 alt">Alt</div>
-					<div class="key key55 blank"></div>
-					<div class="key key54 alt">Alt</div>
-					<div class="key key53 win">Win</div>
-					<div class="key key56 menu">Menu</div>
-					<div class="key key52 ctrl">Ctrl</div>
-				</div>
+				<div class="service"></div>
 			</div>
 		</div>
-		<script src="./assets/index.js"></script>
 	</body>
 </html>
